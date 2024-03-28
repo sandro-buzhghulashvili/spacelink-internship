@@ -1,0 +1,27 @@
+@import '../../scss/variables';
+
+.custom-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $button_bg;
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 10px;
+  margin: 5px;
+  color: $primary_typo;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -1px;
+    border-radius: inherit;
+    background-image: $button_stroke;
+  }
+}
