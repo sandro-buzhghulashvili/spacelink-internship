@@ -1,0 +1,21 @@
+@import '../../scss/variables';
+
+.card {
+  position: relative;
+  padding: 10px;
+  border-radius: 10px;
+  background: $card_background;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -2px;
+    border-radius: inherit;
+    background-image: $card_stroke;
+  }
+}

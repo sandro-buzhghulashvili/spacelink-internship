@@ -1,0 +1,54 @@
+@import '../../scss/variables';
+
+$internal_gradient: linear-gradient(
+  to right,
+  #ffab8f 20%,
+  #ff8ec1 60%,
+  #b67efd 100%
+);
+
+.arc {
+  height: 40rem;
+
+  @include mediumScreen {
+    height: auto;
+  }
+}
+
+.gradientText {
+  background: $primary_typo_gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.buttons {
+  button {
+    margin-bottom: 20px;
+    &:nth-of-type(1) {
+      p {
+        background: $internal_gradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      &::after {
+        background-image: $internal_gradient;
+      }
+
+      .chevron {
+        margin-left: 20px;
+      }
+    }
+  }
+
+  @include largeScreen {
+    button {
+      margin-bottom: 0;
+      margin-right: 20px;
+    }
+  }
+}
+
+.card {
+  position: absolute !important;
+}

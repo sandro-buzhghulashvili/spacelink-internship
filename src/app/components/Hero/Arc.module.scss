@@ -1,0 +1,74 @@
+@import '../../scss/variables';
+
+.ellipse {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 1;
+  width: 500px;
+  height: 230px;
+  border-radius: 300px 300px 0 0;
+  filter: blur(3px);
+
+  &.first {
+    background: linear-gradient(
+      to bottom,
+      #1467b5 0%,
+      #ff98aee4 57%,
+      rgba(58, 58, 58, 0) 100%
+    );
+  }
+  &.second {
+    background: linear-gradient(to bottom, #02041a 0%, rgba(22, 22, 46, 0)) 100%;
+    width: 450px;
+    top: 30px;
+  }
+  &.third {
+    top: 60px;
+    width: 400px;
+    background: linear-gradient(
+      to bottom,
+      rgba(2, 4, 26, 1) 0%,
+      rgba(22, 22, 46, 0)
+    );
+  }
+
+  &.fourth {
+    display: none;
+  }
+
+  @include largeScreen {
+    width: 900px;
+    height: 450px;
+    border-radius: 675px 675px 0 0;
+    filter: blur(5px);
+
+    &.second {
+      width: 700px;
+    }
+    &.third {
+      width: 550px;
+    }
+    &.fourth {
+      display: block;
+      background-color: #02041a;
+      height: 250px;
+      width: 920px;
+      border-radius: 0 0 0 0;
+      top: 250px;
+    }
+  }
+
+  @media screen and (max-width: 550px) {
+    width: 90%;
+
+    &.second {
+      width: 85%;
+    }
+    &.third {
+      width: 70%;
+    }
+  }
+}

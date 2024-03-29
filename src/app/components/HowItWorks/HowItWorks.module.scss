@@ -1,0 +1,74 @@
+@import '../../scss/variables';
+
+.services {
+  li {
+    padding: 10px 40px;
+
+    @include extraLargeScreen {
+      padding: 10px 0;
+    }
+  }
+}
+
+.card {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $icon-background;
+  border-radius: 25px;
+  border: 3px solid rgba(128, 128, 128, 0.221);
+  background-image: none;
+
+  &::after {
+    display: none;
+  }
+
+  &:nth-of-type(1) {
+    position: absolute;
+    bottom: 100px;
+    left: -300px;
+    right: 0;
+    margin: auto;
+    z-index: 11;
+  }
+  &:nth-of-type(2) {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    bottom: -30px;
+    left: 0;
+    right: -300px;
+    margin: auto;
+    z-index: 11;
+  }
+
+  @include extraLargeScreen {
+    width: 100px;
+    height: 100px;
+
+    &:nth-of-type(1) {
+      left: -400px;
+    }
+    &:nth-of-type(2) {
+      width: 110px;
+      height: 110px;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    &:nth-of-type(1) {
+      left: -200px;
+    }
+    &:nth-of-type(2) {
+      right: -150px;
+    }
+  }
+}
+
+.service-card {
+  div {
+    border-radius: 25px;
+  }
+}

@@ -24,7 +24,7 @@ export default function Navbar() {
         </h1>
       </div>
       <div
-        className={`fixed md:relative top-0 ${
+        className={`fixed z-20 md:relative top-0 ${
           navbarToggled ? 'left-0' : '-left-full md:left-0'
         } h-screen w-full  md:h-auto md:w-auto duration-300 ${
           classes['linear-background']
@@ -58,7 +58,12 @@ export default function Navbar() {
           Start free trial <ChevronRight className="w-5 h-5 ml-3" />
         </Button>
       </div>
-      <span className="cursor-pointer z-10 md:hidden" onClick={toggleNavbar}>
+      <span
+        className={`cursor-pointer z-20 md:hidden ${
+          navbarToggled && 'fixed right-10'
+        }`}
+        onClick={toggleNavbar}
+      >
         {navbarToggled ? (
           <X width={32} height={32} className="stroke-primary_typo" />
         ) : (

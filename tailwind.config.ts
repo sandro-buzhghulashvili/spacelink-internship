@@ -16,6 +16,7 @@ const config: Config = {
       colors: {
         primary_background: '#02041A',
         primary_typo: '#CAD1E9',
+        secondary_typo: '#AFB3CA',
         primary_gradient: 'linear-gradient(90deg, #1B1C36 0%, #00000B 16%)',
       },
     },

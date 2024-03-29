@@ -12,7 +12,19 @@ $button_stroke: linear-gradient(
   rgba(78, 78, 105, 0.679) 67.9%,
   #4e4e69 100%
 );
-
+$primary_typo_gradient: linear-gradient(
+  to right,
+  #0084ff 20%,
+  #ff8ac7 60%,
+  #feba75 100%
+);
+$card_background: linear-gradient(16deg, #1b1c36, rgba(112, 113, 122, 0.2));
+$card_stroke: linear-gradient(
+  to right,
+  rgba(44, 45, 71, 1),
+  rgba(68, 74, 226, 0.05)
+);
+$icon-background: #0b1023;
 @mixin mediumScreen {
   @media screen and (min-width: 768px) {
     @content;
