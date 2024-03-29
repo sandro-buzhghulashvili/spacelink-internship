@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 
 import classes from './Hero.module.scss';
@@ -5,11 +7,21 @@ import Button from '../UI/Button';
 import { PlayCircleIcon } from 'lucide-react';
 import Card from '../UI/Card';
 
+import { motion } from 'framer-motion';
+
 export default function HeroComponent() {
   return (
-    <div className="container mx-auto flex flex-col items-center pt-10 mb-40">
+    <div
+      className="container mx-auto flex flex-col items-center pt-10 mb-40"
+      id="home"
+    >
       {/* // ARC */}
-      <div className="h-40 overflow-hidden blur-sm">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.2 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+        className="h-40 overflow-hidden blur-sm"
+      >
         <Image
           src="/arc.png"
           width={900}
@@ -17,9 +29,14 @@ export default function HeroComponent() {
           alt="arc"
           className={classes.arc}
         />
-      </div>
+      </motion.div>
       <div className="-translate-y-7 flex flex-col items-center xl:items-start xl:flex-row xl:justify-center">
-        <div className="flex flex-col items-center xl:items-start xl:w-2/5 px-10 mb-20">
+        <motion.div
+          initial={{ opacity: 0, x: -200 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-col items-center xl:items-start xl:w-2/5 px-10 mb-20"
+        >
           <h1 className="text-5xl lg:text-6xl xl:text-7xl mb-10 w-3/4 xl:w-full text-center xl:text-left text-primary_typo font-semibold leading-tight">
             <span className={classes.gradientText}>Protect your</span> privacy
             online
@@ -44,8 +61,13 @@ export default function HeroComponent() {
               <PlayCircleIcon className="mr-2" /> How it work
             </Button>
           </div>
-        </div>
-        <div className="relative xl:ml-40">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 200 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          className="relative xl:ml-40"
+        >
           <Image
             src="/lock.png"
             width={200}
@@ -70,7 +92,7 @@ export default function HeroComponent() {
               <p className="text-lg text-secondary_typo">tufayel nija</p>
             </div>
           </Card>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

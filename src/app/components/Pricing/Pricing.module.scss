@@ -1,0 +1,70 @@
+@import '../../scss/variables';
+
+$internal_gradient: linear-gradient(
+  to right,
+  #ffab8f 20%,
+  #ff8ec1 60%,
+  #b67efd 100%
+);
+
+.btn {
+  cursor: pointer;
+  &.active {
+    border: 1px solid gray;
+  }
+}
+
+.packet {
+  border-radius: 25px;
+  border: 1px solid gray;
+  padding: 25px !important;
+
+  &.active {
+    // background: red !important;
+    position: relative;
+    background: #1b1c36;
+    padding: 40px 25px !important;
+
+    h1 {
+      &:nth-of-type(2) {
+        background: $internal_gradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      margin: -2px;
+      border-radius: inherit;
+      background-image: $internal_gradient;
+    }
+  }
+
+  ul {
+    li {
+      display: flex;
+      margin-bottom: 10px;
+      padding: 10px 20px;
+
+      .icon {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  button {
+    margin-top: 20px;
+    width: 100%;
+    border: 1px solid gray;
+    padding: 10px 20px;
+    border-radius: 15px;
+    background: $card-background;
+  }
+}

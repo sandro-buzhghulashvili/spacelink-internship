@@ -1,0 +1,17 @@
+@import '../../scss/variables';
+
+.card {
+  padding: 25px !important;
+  margin: 20px;
+}
+
+.panel {
+  width: 96%;
+  padding: 25px;
+  margin: auto 20px;
+
+  @include largeScreen {
+    width: 70%;
+    margin: auto;
+  }
+}

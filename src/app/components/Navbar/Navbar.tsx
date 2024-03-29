@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { ChevronRight, Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 
 import classes from './Navbar.module.scss';
 import Link from 'next/link';
@@ -16,7 +17,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="container mx-auto py-6 px-6 md:px-0 flex items-center justify-between">
+    <nav className="fixed top-0 left-0 right-0 bg-primary_background z-20 container mx-auto py-6 px-6 md:px-0 flex items-center justify-between">
       <div className="flex items-center">
         <Image width={32} height={32} src="/logo.png" alt="logo" />
         <h1 className="ml-3 text-2xl font-bold text-primary_typo">
@@ -32,19 +33,30 @@ export default function Navbar() {
       >
         <ul className={classes.navlinks}>
           <li>
-            <Link href="/">Home</Link>
+            <ScrollLink to="home" smooth={true} duration={500}>
+              Home
+            </ScrollLink>{' '}
+            {/* Use ScrollLink instead of Link */}
           </li>
           <li>
-            <Link href="/">Features</Link>
+            <ScrollLink to="features" smooth={true} duration={500}>
+              Features
+            </ScrollLink>
           </li>
           <li>
-            <Link href="/">Pricing</Link>
+            <ScrollLink to="pricing" smooth={true} duration={500}>
+              Pricing
+            </ScrollLink>
           </li>
           <li>
-            <Link href="/">Partners</Link>
+            <ScrollLink to="partners" smooth={true} duration={500}>
+              Partners
+            </ScrollLink>
           </li>
           <li>
-            <Link href="/">About us</Link>
+            <ScrollLink to="aboutUs" smooth={true} duration={500}>
+              About us
+            </ScrollLink>
           </li>
           <li className="md:hidden">
             <Button>
@@ -59,9 +71,7 @@ export default function Navbar() {
         </Button>
       </div>
       <span
-        className={`cursor-pointer z-20 md:hidden ${
-          navbarToggled && 'fixed right-10'
-        }`}
+        className={`cursor-pointer z-20 md:hidden ${navbarToggled && 'fixed'}`}
         onClick={toggleNavbar}
       >
         {navbarToggled ? (

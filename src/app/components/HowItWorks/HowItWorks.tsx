@@ -1,13 +1,20 @@
+'use client';
+
 import Image from 'next/image';
 import classes from './HowItWorks.module.scss';
 import Card from '../UI/Card';
 
+import { motion } from 'framer-motion';
+
 export default function HowItWorks() {
   return (
     <>
-      <div className="container mx-auto mb-40 flex flex-col xl:flex-row xl:justify-center items-center">
+      <div
+        className="container mx-auto mb-40 flex flex-col xl:flex-row xl:justify-center items-center"
+        id="features"
+      >
         <div className="mb-28 xl:m-0 xl:w-2/5">
-          <h1 className="text-4xl  px-2 xl:text-6xl xl:leading-snug mb-10 text-primary_typo text-center xl:text-left leading-tight">
+          <h1 className="text-4xl font-medium px-2 xl:text-6xl xl:leading-snug mb-10 text-primary_typo text-center xl:text-left leading-tight">
             We remove your private information form the online
           </h1>
           <ul className={`${classes.services} text-secondary_typo`}>
@@ -25,7 +32,15 @@ export default function HowItWorks() {
             </li>
           </ul>
         </div>
-        <div className="relative w-full xl:w-fit m-0  xl:ml-32">
+        <motion.div
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1, transition: { staggerChildren: 0.05 } }, // Not enough time to finish
+          }}
+          initial="hidden"
+          whileInView="visible"
+          className="relative w-full xl:w-fit m-0  xl:ml-32"
+        >
           <Image
             src="/card1.png"
             width={350}
@@ -57,11 +72,11 @@ export default function HowItWorks() {
           >
             Delete
           </span>
-        </div>
+        </motion.div>
       </div>
-      <div className="container mx-auto flex flex-col items-center xl:flex-row-reverse xl:justify-center">
+      <div className="container mx-auto mb-40 flex flex-col items-center xl:flex-row-reverse xl:justify-center">
         <div className="mb-20 xl:m-0 xl:w-2/5">
-          <h1 className="text-4xl px-2 xl:text-6xl xl:leading-snug mb-10 text-primary_typo text-center xl:text-left leading-tight">
+          <h1 className="text-4xl font-medium px-2 xl:text-6xl xl:leading-snug mb-10 text-primary_typo text-center xl:text-left leading-tight">
             Cloaking identities stand in for your personal data
           </h1>
           <p className="text-secondary_typo text-center px-10 xl:p-0 xl:text-left">
